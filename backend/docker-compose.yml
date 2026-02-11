@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  backend:
+    image: flyzees7/movie-backend:develop
+    container_name: movie-backend-container
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - D:/hf_cache/models:/models
+    environment:
+      - MODEL_CACHE_DIR=/models
+      - HF_HOME=/models/huggingface
+      - TRANSFORMERS_CACHE=/models/transformers
+      - TORCH_HOME=/models/torch
+    networks:
+      - movie-app-net
+
+  frontend:
+    image: flyzees7/movie-frontend:latest
+    container_name: movie-frontend-container
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    networks:
+      - movie-app-net
+
+networks:
+  movie-app-net:
+    driver: bridge

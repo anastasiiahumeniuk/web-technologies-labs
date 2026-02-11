@@ -1,0 +1,112 @@
+name: Python CI
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    - cron: "0 10 * * *"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # ---------- Cache pip ----------
+      - name: Cache pip
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # ---------- Install dependencies ----------
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --no-cache-dir -r requirements.txt
+          pip install --no-cache-dir fastapi starlette
+          pip install --no-cache-dir ruff pytest pytest-cov httpx
+
+      # ---------- Debug FastAPI ----------
+      - name: Debug FastAPI & Starlette
+        run: |
+          pip show fastapi
+          pip show starlette
+          python - <<EOF
+          import fastapi
+          import starlette
+          print("FastAPI & Starlette OK")
+          EOF
+
+      - name: Debug installed packages
+        run: pip list
+
+      # ---------- Lint ----------
+      - name: Lint with Ruff
+        run: ruff check .
+
+      # ---------- Tests with coverage ----------
+      - name: Run tests with coverage
+        run: pytest --cov=app --cov-branch --cov-report=xml:coverage.xml
+
+      # ---------- Upload coverage.xml ----------
+      - name: Upload coverage.xml as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
+
+      # ---------- Upload to Codecov (diff coverage lives here) ----------
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: coverage.xml
+          fail_ci_if_error: false
+          flags: unittests
+          verbose: true
+
+      # ---------- Extract PROJECT coverage ----------
+      - name: Extract project coverage
+        id: project_coverage
+        run: |
+          LINE=$(grep -oP 'line-rate="\K[0-9.]+' coverage.xml | head -n1)
+          BRANCH=$(grep -oP 'branch-rate="\K[0-9.]+' coverage.xml | head -n1)
+
+          LINE_PERCENT=$(python3 -c "print(round(float('${LINE}') * 100, 2))")
+          BRANCH_PERCENT=$(python3 -c "print(round(float('${BRANCH}') * 100, 2))")
+
+          echo "line=${LINE_PERCENT}" >> $GITHUB_OUTPUT
+          echo "branch=${BRANCH_PERCENT}" >> $GITHUB_OUTPUT
+
+      # ---------- Comment in PR ----------
+      - name: Comment coverage result in PR
+        if: github.event_name == 'pull_request'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            🔍 **Coverage report**
+
+            **Project coverage**
+            - Line coverage: **${{ steps.project_coverage.outputs.line }}%**
+            - Branch coverage: **${{ steps.project_coverage.outputs.branch }}%**
+
+            **PR (diff) coverage**
+            - Calculated by Codecov (visible in PR checks)
+
+            ✅ CI completed successfully

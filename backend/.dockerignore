@@ -1,0 +1,21 @@
+# Ignore the virtual environment
+.venv/
+
+# Ignore Python cache files
+**/__pycache__/
+*.py[cod]
+
+# Ignore environment variables (you will pass these via Docker Run/Compose)
+.env
+
+# Ignore Git data
+.git/
+.github/
+
+# Ignore logs and tests to save space
+logs/
+tests/
+
+# Ignore local IDE settings
+.idea/
+.vscode/

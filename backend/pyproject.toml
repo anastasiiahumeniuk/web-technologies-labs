@@ -1,0 +1,13 @@
+[tool.ruff.lint]
+ignore = ["F401", "F811", "E712", "F821"]
+exclude = ["venv/"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*.py" = ["E402"]
+"alembic/*.py" = ["E402"]
+"app/models/film.py" = ["F821"]
+"app/models/client.py" = ["F401", "E402"]
+"app/models/__init__.py" = ["F401"]
+"tests/*.py" = ["E402"]
+
+
