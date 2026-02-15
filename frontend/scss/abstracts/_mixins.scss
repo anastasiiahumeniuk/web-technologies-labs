@@ -1,0 +1,21 @@
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin grid-layout($cols: 4, $gap: 20px) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    gap: $gap;
+
+    @include mobile {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

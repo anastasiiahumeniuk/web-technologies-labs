@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель керування | MovieAI</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">MovieAI Admin</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Користувачі</a></li>
+                <li><a href="login.html">Вихід</a></li> </ul>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <section class="user-management">
+            <header class="section-header">
+                <h1>Управління користувачами</h1>
+                <a href="#create-user-modal" class="btn btn-primary">Додати користувача</a>
+            </header>
+
+            <div class="table-responsive">
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Користувач</th>
+                            <th>Роль</th>
+                            <th>Дії</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="user-row admin-role">
+                            <td>1</td>
+                            <td><a href="user-profile.html">Anastasiia_Admin</a></td>
+                            <td><span class="badge badge-admin">Admin</span></td>
+                            <td>
+                                <button class="btn btn-small btn-edit">Редагувати</button>
+                                <button class="btn btn-small btn-delete">Видалити</button>
+                            </td>
+                        </tr>
+                        <tr class="user-row regular-role">
+                            <td>2</td>
+                            <td>MovieFan_2026</td>
+                            <td><span class="badge badge-regular">Regular</span></td>
+                            <td>
+                                <button class="btn btn-small btn-edit">Редагувати</button>
+                                <button class="btn btn-small btn-delete">Видалити</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

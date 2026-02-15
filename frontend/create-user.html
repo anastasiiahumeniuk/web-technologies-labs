@@ -1,0 +1,30 @@
+<section class="modal-overlay">
+    <div class="modal-content">
+        <h2>Створити нового користувача</h2>
+        <form class="auth-form">
+            <div class="form-group">
+                <label for="new-username">Ім'я користувача</label>
+                <input type="text" id="new-username" placeholder="Введіть логін">
+            </div>
+            <div class="form-group">
+                <label for="new-password">Пароль</label>
+                <input type="password" id="new-password">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Підтвердіть пароль</label>
+                <input type="password" id="confirm-password">
+            </div>
+            <div class="form-group">
+                <label for="role">Роль</label>
+                <select id="role">
+                    <option value="regular">Regular</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary">Cancel</button>
+                <button type="submit" class="btn btn-primary">Ok</button>
+            </div>
+        </form>
+    </div>
+</section>

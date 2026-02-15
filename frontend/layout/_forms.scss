@@ -1,0 +1,42 @@
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #ccc;
+    }
+
+    input, select {
+        padding: 12px;
+        background: #222;
+        border: 1px solid #444;
+        border-radius: 4px;
+        color: white;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+        }
+
+        &:invalid {
+            border-color: $error-color;
+        }
+    }
+}
+
+.error-msg {
+    color: $error-color;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профіль користувача | MovieAI</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">MovieAI</a>
+            <ul class="nav-links">
+                <li><a href="movies.html">Фільми</a></li>
+                <li><a href="index.html">Користувачі</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="profile-container">
+        <section class="profile-card">
+            <div class="profile-header">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Anastasiia" alt="Аватар користувача" class="profile-avatar">
+                <h1>Анастасія Гуменюк</h1>
+                <span class="badge badge-admin">Адміністратор</span>
+            </div>
+            
+            <div class="profile-details">
+                <p><strong>Email:</strong> ana.humen@example.com</p>
+                <p><strong>Дата реєстрації:</strong> 01.09.2025</p>
+                <p><strong>Статус:</strong> Consistent high academic rating (90+)</p>
+            </div>
+        </section>
+
+        <section class="edit-user-section">
+            <h2>Редагувати профіль</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="edit-name">Ім'я</label>
+                    <input type="text" id="edit-name" value="Анастасія Гуменюк">
+                </div>
+                <div class="form-group">
+                    <label for="edit-role">Роль</label>
+                    <select id="edit-role">
+                        <option value="admin" selected>Admin</option>
+                        <option value="regular">Regular</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Зберегти зміни</button>
+                    <button type="button" class="btn btn-delete">Видалити акаунт</button> </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
