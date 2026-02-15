@@ -3,59 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Панель керування | MovieAI</title>
+    <title>Управління користувачами | MovieAI</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <header class="main-header">
         <nav class="nav-container">
-            <div class="logo">MovieAI Admin</div>
+            <a href="index.html" class="logo">movie-ai admin</a>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Користувачі</a></li>
-                <li><a href="login.html">Вихід</a></li> </ul>
+                <li><a href="movies.html">фільми</a></li>
+                <li><a href="index.html" class="active">користувачі</a></li>
+                <li><a href="login.html" class="logout-link">вихід</a></li>
+            </ul>
         </nav>
     </header>
 
     <main class="content-wrapper">
         <section class="user-management">
             <header class="section-header">
-                <h1>Управління користувачами</h1>
-                <a href="#create-user-modal" class="btn btn-primary">Додати користувача</a>
+                <h1>управління користувачами</h1>
+                <a href="#create-user-modal" class="btn btn-primary">додати користувача</a>
             </header>
 
             <div class="table-responsive">
                 <table class="user-table">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Користувач</th>
-                            <th>Роль</th>
-                            <th>Дії</th>
+                            <th>id</th>
+                            <th>користувач</th>
+                            <th>роль</th>
+                            <th>дії</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="user-row admin-role">
                             <td>1</td>
-                            <td><a href="user-profile.html">Anastasiia_Admin</a></td>
-                            <td><span class="badge badge-admin">Admin</span></td>
+                            <td><a href="user-profile.html">anastasiia_admin</a></td>
+                            <td><span class="badge badge-admin">admin</span></td>
                             <td>
-                                <button class="btn btn-small btn-edit">Редагувати</button>
-                                <button class="btn btn-small btn-delete">Видалити</button>
-                            </td>
-                        </tr>
-                        <tr class="user-row regular-role">
-                            <td>2</td>
-                            <td>MovieFan_2026</td>
-                            <td><span class="badge badge-regular">Regular</span></td>
-                            <td>
-                                <button class="btn btn-small btn-edit">Редагувати</button>
-                                <button class="btn btn-small btn-delete">Видалити</button>
+                                <a href="user-profile.html" class="btn btn-small btn-edit">редагувати</a>
+                                <button class="btn btn-small btn-delete">видалити</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
+
+        <section id="create-user-modal" class="modal-overlay">
+            <div class="modal-content">
+                <a href="#" class="modal-close">&times;</a>
+                <h2>створити користувача</h2>
+                <form class="auth-form">
+                    <div class="form-group">
+                        <label for="new-username">логін</label>
+                        <input type="text" id="new-username" required placeholder="введіть логін">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">пароль</label>
+                        <input type="password" id="new-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">підтвердження</label>
+                        <input type="password" id="confirm-password" required>
+                        <span class="error-msg">паролі не збігаються</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">роль</label>
+                        <select id="role">
+                            <option value="regular">regular</option>
+                            <option value="admin">admin</option>
+                        </select>
+                    </div>
+                    <div class="modal-actions">
+                        <a href="#" class="btn btn-secondary">cancel</a>
+                        <button type="submit" class="btn btn-primary">ok</button>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 movie portal. всі права захищені.</p>
+    </footer>
 </body>
 </html>
