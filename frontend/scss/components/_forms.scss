@@ -1,0 +1,30 @@
+.simple-form {
+  display: grid;
+  gap: 0.7rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select {
+  border: 1px solid $border;
+  border-radius: 10px;
+  padding: 0.6rem 0.7rem;
+  background: #0f1829;
+  color: $text;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #35548f;
+  outline-offset: 1px;
+}
+
+.auth-shell,
+.panel,
+.highlight-card {
+  @include panel;
+  padding: 1rem;
+}

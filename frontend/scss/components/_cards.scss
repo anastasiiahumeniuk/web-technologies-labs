@@ -1,0 +1,21 @@
+.cards {
+  @include responsive-grid(220px);
+}
+
+.cards-4 {
+  @include responsive-grid(200px);
+}
+
+.card {
+  @include panel;
+  overflow: hidden;
+}
+
+.card img {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 0.9rem;
+}

@@ -1,80 +1,12 @@
-/* */
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-@import '../layout/header';
-@import '../layout/footer';
-@import '../layout/forms';
-@import '../layout/tables';
-
-/* базові налаштування */
-body {
-    background-color: $bg-color;
-    color: $text-color;
-    font-family: $font-main;
-    margin: 0;
-    padding: 0;
-}
-
-/* каталог фільмів з використанням міксинів */
-.movie-grid {
-    @include grid-layout(4);
-    padding: 40px 20px;
-}
-
-.movie-card {
-    @include movie-hover-effect;
-    background: #1a1a1a;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-}
-
-/* постер та ефекти (макс 2 рівні вкладеності) */
-.movie-poster {
-    position: relative;
-    overflow: hidden;
-    height: 450px;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-}
-
-/* оверлей при наведенні */
-.movie-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-
-    &:hover {
-        opacity: 1;
-    }
-}
-
-/* псевдоелементи та валідація */
-.rating-badge::before {
-    content: '★ ';
-    color: gold;
-}
-
-.form-input:invalid {
-    border: 1px solid $error-color;
-}
-
-/* модальне вікно без javascript */
-.modal-overlay:target {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/reset";
+@import "base/typography";
+@import "layout/header";
+@import "layout/footer";
+@import "components/buttons";
+@import "components/cards";
+@import "components/forms";
+@import "components/tables";
+@import "components/modal";
+@import "pages/home";

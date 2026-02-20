@@ -1,48 +1,70 @@
-<main class="movies-catalog">
-    <h1>популярні фільми</h1>
-    <div class="movie-grid">
-        <article class="movie-card">
-            <div class="movie-poster">
-                <img src="img/poster1.png" alt="постер до фільму інтерстеллар">
-                <div class="movie-overlay">
-                    <a href="movie-details.html" class="btn btn-small">детальніше</a>
-                </div>
-            </div>
-            <h3>інтерстеллар</h3>
-            <p>наукова фантастика</p>
-        </article>
-
-        <article class="movie-card">
-            <div class="movie-poster">
-                <img src="img/poster2.png" alt="постер до фільму початок">
-                <div class="movie-overlay">
-                    <a href="movie-details.html" class="btn btn-small">детальніше</a>
-                </div>
-            </div>
-            <h3>початок</h3>
-            <p>трилер</p>
-        </article>
-
-        <article class="movie-card">
-            <div class="movie-poster">
-                <img src="img/poster3.png" alt="постер до фільму той що біжить по лезу">
-                <div class="movie-overlay">
-                    <a href="movie-details.html" class="btn btn-small">детальніше</a>
-                </div>
-            </div>
-            <h3>той що біжить по лезу</h3>
-            <p>кіберпанк</p>
-        </article>
-
-        <article class="movie-card">
-            <div class="movie-poster">
-                <img src="img/poster4.png" alt="постер до фільму матриця">
-                <div class="movie-overlay">
-                    <a href="movie-details.html" class="btn btn-small">детальніше</a>
-                </div>
-            </div>
-            <h3>матриця</h3>
-            <p>екшн</p>
-        </article>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movies | MovieAI Lab</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">MovieAI Lab</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html" class="is-active">Movies</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
     </div>
-</main>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1>Movie Catalog</h1>
+      <div class="cards cards-4">
+        <article class="card">
+          <img src="img/poster1.png" alt="Interstellar poster">
+          <div class="card-body">
+            <h2>Interstellar</h2>
+            <p>Sci-fi</p>
+            <a class="btn btn-ghost" href="movie-details.html">Details</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/poster2.png" alt="Inception poster">
+          <div class="card-body">
+            <h2>Inception</h2>
+            <p>Thriller</p>
+            <a class="btn btn-ghost" href="movie-details.html">Details</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/poster3.png" alt="Blade Runner poster">
+          <div class="card-body">
+            <h2>Blade Runner</h2>
+            <p>Cyberpunk</p>
+            <a class="btn btn-ghost" href="movie-details.html">Details</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/poster4.png" alt="The Matrix poster">
+          <div class="card-body">
+            <h2>The Matrix</h2>
+            <p>Action</p>
+            <a class="btn btn-ghost" href="movie-details.html">Details</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>&copy; 2026 MovieAI Lab.</p>
+      <a href="LAB_REPORT.md">AI usage report</a>
+    </div>
+  </footer>
+</body>
+</html>

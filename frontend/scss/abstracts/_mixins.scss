@@ -1,22 +1,23 @@
-@mixin mobile {
-    @media (max-width: 768px) {
-        @content;
-    }
+@mixin container {
+  width: min(100% - 2rem, $container);
+  margin-inline: auto;
 }
 
-@mixin movie-hover-effect {
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.6);
-    }
+@mixin panel {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius;
+  box-shadow: $shadow;
 }
 
-@mixin grid-layout($cols: 4) {
-    display: grid;
-    grid-template-columns: repeat($cols, 1fr);
-    gap: 20px;
-    @include mobile {
-        grid-template-columns: repeat(1, 1fr);
-    }
+@mixin flex-row($gap: 1rem) {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin responsive-grid($min: 240px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+  gap: 1rem;
 }

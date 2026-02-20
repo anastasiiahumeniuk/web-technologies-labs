@@ -1,91 +1,140 @@
-<!DOCTYPE html>
-<html lang="uk">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>управління користувачами | movieai</title>
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MovieAI Lab | Static HTML + SCSS</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header class="main-header">
-        <nav class="nav-container">
-            <a href="index.html" class="logo">movie-ai admin</a>
-            <ul class="nav-links">
-                <li><a href="movies.html">фільми</a></li>
-                <li><a href="index.html" class="active">користувачі</a></li>
-                <li><a href="login.html" class="logout-link">вихід</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">MovieAI Lab</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="is-active">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="#signup-modal">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main class="content-wrapper">
-        <section class="user-management">
-            <header class="section-header">
-                <h1>управління користувачами</h1>
-                <a href="#create-user-modal" class="btn btn-primary">додати користувача</a>
-            </header>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Lab 1 Practice</p>
+          <h1>Page layout with HTML and SCSS</h1>
+          <p class="lead">
+            This static website demonstrates semantic HTML structure and styling with SCSS compiled to CSS.
+            No JavaScript is used.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="movies.html">Browse movies</a>
+            <a class="btn btn-ghost" href="LAB_REPORT.md">Read AI report</a>
+          </div>
+        </div>
+        <aside class="highlight-card">
+          <h2>What this page includes</h2>
+          <ul>
+            <li>Responsive grid layout</li>
+            <li>Reusable SCSS variables and mixins</li>
+            <li>Cards, table, form, and modal via <code>:target</code></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
 
-            <div class="table-responsive">
-                <table class="user-table">
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>користувач</th>
-                            <th>роль</th>
-                            <th>дії</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="user-row admin-role">
-                            <td>1</td>
-                            <td><a href="user-profile.html">anastasiia_admin</a></td>
-                            <td><span class="badge badge-admin">admin</span></td>
-                            <td>
-                                <a href="user-profile.html" class="btn btn-small btn-edit">редагувати</a>
-                                <button class="btn btn-small btn-delete">видалити</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+    <section class="section">
+      <div class="container">
+        <h2>Featured Titles</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="img/poster1.png" alt="Interstellar poster">
+            <div class="card-body">
+              <h3>Interstellar</h3>
+              <p>Sci-fi drama with strong visual storytelling.</p>
             </div>
-        </section>
-
-        <section id="create-user-modal" class="modal-overlay">
-            <div class="modal-content">
-                <a href="#" class="modal-close">&times;</a>
-                <h2>створити користувача</h2>
-                <form class="auth-form">
-                    <div class="form-group">
-                        <label for="new-username">логін</label>
-                        <input type="text" id="new-username" required placeholder="введіть логін">
-                    </div>
-                    <div class="form-group">
-                        <label for="new-password">пароль</label>
-                        <input type="password" id="new-password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirm-password">підтвердження</label>
-                        <input type="password" id="confirm-password" required>
-                        <span class="error-msg">паролі не збігаються</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="role">роль</label>
-                        <select id="role">
-                            <option value="regular">regular</option>
-                            <option value="admin">admin</option>
-                        </select>
-                    </div>
-                    <div class="modal-actions">
-                        <a href="#" class="btn btn-secondary">cancel</a>
-                        <button type="submit" class="btn btn-primary">ok</button>
-                    </div>
-                </form>
+          </article>
+          <article class="card">
+            <img src="img/poster2.png" alt="Inception poster">
+            <div class="card-body">
+              <h3>Inception</h3>
+              <p>A layered thriller with dream-like architecture.</p>
             </div>
-        </section>
-    </main>
+          </article>
+          <article class="card">
+            <img src="img/poster3.png" alt="Blade Runner poster">
+            <div class="card-body">
+              <h3>Blade Runner</h3>
+              <p>Neon-noir future city and existential mystery.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <footer class="main-footer">
-        <p>&copy; 2026 movie portal. всі права захищені.</p>
-    </footer>
+    <section class="section section-soft">
+      <div class="container">
+        <h2>Weekly Schedule</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Movie</th>
+                <th>Genre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday</td>
+                <td>Interstellar</td>
+                <td>Sci-fi</td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>Inception</td>
+                <td>Thriller</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>The Matrix</td>
+                <td>Action</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="signup-modal" class="modal" aria-label="Join form">
+    <div class="modal-content">
+      <a href="#" class="modal-close" aria-label="Close modal">&times;</a>
+      <h2>Join MovieAI</h2>
+      <form class="simple-form" action="#">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your name" required>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+        <label for="role">Role</label>
+        <select id="role">
+          <option>Student</option>
+          <option>Teacher</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>&copy; 2026 MovieAI Lab.</p>
+      <a href="LAB_REPORT.md">AI usage report</a>
+    </div>
+  </footer>
 </body>
 </html>

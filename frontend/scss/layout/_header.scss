@@ -1,0 +1,35 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(12, 18, 31, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid $border;
+}
+
+.nav-row {
+  @include flex-row(1rem);
+  justify-content: space-between;
+  min-height: 70px;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.nav-list {
+  @include flex-row(1rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list a {
+  color: $muted;
+}
+
+.nav-list a.is-active,
+.nav-list a:hover {
+  color: $text;
+}

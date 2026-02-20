@@ -1,17 +1,53 @@
-<main class="search-container">
-    <section class="search-header">
-        <h1>результати пошуку для: "космічні пригоди"</h1>
-        <p>знайдено 2 фільми на основі ваших уподобань</p>
-    </section>
-
-    <div class="movie-grid">
-        <article class="movie-card">
-            <img src="img/movie1.jpg" alt="постер до фільму марсіянин">
-            <h3>марсіянин</h3>
-        </article>
-        <article class="movie-card">
-            <img src="img/movie2.jpg" alt="постер до фільму прометей">
-            <h3>прометей</h3>
-        </article>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search Results | MovieAI Lab</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">MovieAI Lab</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html" class="is-active">Movies</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
     </div>
-</main>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1>Search Results: "space adventure"</h1>
+      <p class="muted">2 results found</p>
+      <div class="cards">
+        <article class="card">
+          <img src="img/poster1.png" alt="Interstellar poster">
+          <div class="card-body">
+            <h2>Interstellar</h2>
+            <a class="btn btn-ghost" href="movie-details.html">Details</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/poster4.png" alt="The Matrix poster">
+          <div class="card-body">
+            <h2>The Matrix</h2>
+            <a class="btn btn-ghost" href="movie-details.html">Details</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>&copy; 2026 MovieAI Lab.</p>
+      <a href="LAB_REPORT.md">AI usage report</a>
+    </div>
+  </footer>
+</body>
+</html>

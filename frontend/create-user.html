@@ -1,30 +1,50 @@
-<section class="modal-overlay">
-    <div class="modal-content">
-        <h2>Створити нового користувача</h2>
-        <form class="auth-form">
-            <div class="form-group">
-                <label for="new-username">Ім'я користувача</label>
-                <input type="text" id="new-username" placeholder="Введіть логін">
-            </div>
-            <div class="form-group">
-                <label for="new-password">Пароль</label>
-                <input type="password" id="new-password">
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">Підтвердіть пароль</label>
-                <input type="password" id="confirm-password">
-            </div>
-            <div class="form-group">
-                <label for="role">Роль</label>
-                <select id="role">
-                    <option value="regular">Regular</option>
-                    <option value="admin">Admin</option>
-                </select>
-            </div>
-            <div class="modal-actions">
-                <button type="button" class="btn btn-secondary">Cancel</button>
-                <button type="submit" class="btn btn-primary">Ok</button>
-            </div>
-        </form>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create User | MovieAI Lab</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">MovieAI Lab</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
     </div>
-</section>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="auth-shell">
+        <h1>Create user</h1>
+        <form class="simple-form" action="#">
+          <label for="new-name">Username</label>
+          <input id="new-name" type="text" required>
+          <label for="new-pass">Password</label>
+          <input id="new-pass" type="password" required>
+          <label for="new-role">Role</label>
+          <select id="new-role">
+            <option>Student</option>
+            <option>Teacher</option>
+          </select>
+          <button class="btn btn-primary" type="submit">Create</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>&copy; 2026 MovieAI Lab.</p>
+      <a href="LAB_REPORT.md">AI usage report</a>
+    </div>
+  </footer>
+</body>
+</html>

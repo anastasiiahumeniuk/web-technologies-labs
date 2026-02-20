@@ -1,39 +1,45 @@
-<!DOCTYPE html>
-<html lang="uk">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Інтерстеллар | MovieAI</title>
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movie Details | MovieAI Lab</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header class="main-header">
-        <nav class="nav-container">
-            <a href="index.html" class="logo">MovieAI</a>
-            <ul class="nav-links">
-                <li><a href="movies.html">Фільми</a></li>
-                <li><a href="user-profile.html">Профіль</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">MovieAI Lab</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html" class="is-active">Movies</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main class="movie-detail-container">
-        <article class="movie-info">
-            <div class="movie-visual">
-                <img src="interstellar-poster.jpg" alt="Постер фільму Інтерстеллар">
-            </div>
-            <div class="movie-description">
-                <h1>Інтерстеллар</h1>
-                <p class="movie-meta">2014 • Наукова фантастика • 2г 49хв</p>
-                <div class="rating-badge">AI Score: 98%</div>
-                <p class="summary">Коли посуха, пилові бурі та вимирання рослин ставлять людство перед продовольчою кризою, колектив дослідників вирушає крізь червоточину...</p>
-                <button class="btn btn-primary">Дивитися трейлер</button>
-            </div>
-        </article>
-    </main>
+  <main class="section">
+    <div class="container detail-grid">
+      <img class="detail-poster" src="img/poster1.png" alt="Interstellar poster">
+      <article>
+        <h1>Interstellar</h1>
+        <p class="muted">2014 • Sci-fi • 2h 49m</p>
+        <p>
+          A team of explorers travels beyond the known solar system in search of a future for humanity.
+        </p>
+        <p class="rating">AI score: <strong>98%</strong></p>
+        <a class="btn btn-primary" href="movies.html">Back to catalog</a>
+      </article>
+    </div>
+  </main>
 
-    <footer class="main-footer">
-        <p>&copy; 2026 Movie Portal. Створено Anastasiia Humeniuk.</p>
-    </footer>
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>&copy; 2026 MovieAI Lab.</p>
+      <a href="LAB_REPORT.md">AI usage report</a>
+    </div>
+  </footer>
 </body>
 </html>

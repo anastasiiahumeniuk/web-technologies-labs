@@ -1,0 +1,23 @@
+.table-wrap {
+  overflow-x: auto;
+  @include panel;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.8rem;
+  text-align: left;
+}
+
+thead {
+  background: $bg-soft;
+}
+
+tbody tr + tr {
+  border-top: 1px solid $border;
+}

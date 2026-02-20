@@ -1,56 +1,54 @@
-<!DOCTYPE html>
-<html lang="uk">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>профіль користувача | movieai</title>
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Profile | MovieAI Lab</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header class="main-header">
-        <nav class="nav-container">
-            <a href="index.html" class="logo">movieai</a>
-            <ul class="nav-links">
-                <li><a href="movies.html">фільми</a></li>
-                <li><a href="index.html">користувачі</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">MovieAI Lab</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main class="profile-container">
-        <section class="profile-card">
-            <div class="profile-header">
-                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Anastasiia" alt="аватар користувача" class="profile-avatar">
-                <h1>анастасія гуменюк</h1>
-                <span class="badge badge-admin">адміністратор</span>
-            </div>
-            <div class="profile-details">
-                <p><strong>email:</strong> ana.humen@example.com</p>
-                <p><strong>дата реєстрації:</strong> 01.09.2025</p>
-                <p><strong>статус:</strong> consistent high academic rating (90+)</p>
-            </div>
-        </section>
+  <main class="section">
+    <div class="container two-col">
+      <article class="panel">
+        <h1>Student Profile</h1>
+        <p><strong>Name:</strong> Anastasiia H.</p>
+        <p><strong>Role:</strong> Student</p>
+        <p><strong>Email:</strong> student@example.com</p>
+      </article>
+      <article class="panel">
+        <h2>Edit Profile</h2>
+        <form class="simple-form" action="#">
+          <label for="full-name">Full name</label>
+          <input id="full-name" type="text" value="Anastasiia H.">
+          <label for="user-role">Role</label>
+          <select id="user-role">
+            <option>Student</option>
+            <option>Teacher</option>
+          </select>
+          <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+      </article>
+    </div>
+  </main>
 
-        <section class="edit-user-section">
-            <h2>редагувати профіль</h2>
-            <form class="auth-form">
-                <div class="form-group">
-                    <label for="edit-name">ім'я</label>
-                    <input type="text" id="edit-name" value="анастасія гуменюк">
-                </div>
-                <div class="form-group">
-                    <label for="edit-role">роль</label>
-                    <select id="edit-role">
-                        <option value="admin" selected>admin</option>
-                        <option value="regular">regular</option>
-                    </select>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">зберегти зміни</button>
-                    <button type="button" class="btn btn-delete">видалити акаунт</button>
-                </div>
-            </form>
-        </section>
-    </main>
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>&copy; 2026 MovieAI Lab.</p>
+      <a href="LAB_REPORT.md">AI usage report</a>
+    </div>
+  </footer>
 </body>
 </html>
