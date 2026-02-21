@@ -1,4 +1,4 @@
-# Frontend Lab 1 (Static HTML + SCSS)
+﻿# Frontend Lab 1 (Static HTML + SCSS)
 
 This frontend is a static website for Lab 1:
 - HTML for page structure
@@ -11,7 +11,6 @@ This frontend is a static website for Lab 1:
 - `index.html`, `movies.html`, `movie-details.html`, `login.html`, `user-profile.html`
 - `scss/main.scss` and partials in `scss/**`
 - Compiled file: `css/main.css`
-- Lab report: `LAB_REPORT.md`
 
 ## Compile SCSS to CSS
 
