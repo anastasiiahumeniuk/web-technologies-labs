@@ -33,3 +33,23 @@
 .nav-list a:hover {
   color: $text;
 }
+
+.header-search {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.55rem 0;
+}
+
+.header-search__form {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.header-search__form input {
+  flex: 1;
+  min-width: 200px;
+  border-radius: $radius;
+  border: 1px solid $border;
+  padding: 0.65rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: $text;
+}

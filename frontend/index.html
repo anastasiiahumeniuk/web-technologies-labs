@@ -14,11 +14,17 @@
         <ul class="nav-list">
           <li><a href="index.html" class="is-active">Home</a></li>
           <li><a href="movies.html">Movies</a></li>
-          <li><a href="search.html">Search</a></li>
           <li><a href="login.html">Login</a></li>
           <li><a href="create-user.html">Join</a></li>
         </ul>
       </nav>
+    </div>
+    <div class="container header-search">
+      <form class="header-search__form" action="search-results.html">
+        <label class="sr-only" for="main-search">Search MovieAI</label>
+        <input id="main-search" name="q" type="search" placeholder="Search movies, profiles, guides..." required>
+        <button class="btn btn-primary" type="submit">View results</button>
+      </form>
     </div>
   </header>
 
@@ -44,32 +50,6 @@
             <li>Quick access to details, schedule, and join form</li>
           </ul>
         </aside>
-      </div>
-    </section>
-
-    <section class="section section-search">
-      <div class="container search-panel">
-        <div class="search-panel__intro">
-          <p class="eyebrow">Navigate</p>
-          <h2>Find any corner of MovieAI</h2>
-          <p>Enter a quick search term to jump directly to the dedicated search page, or use the quick links below to hop between sections.</p>
-        </div>
-        <form class="search-form" action="search.html">
-          <label class="sr-only" for="site-search">Search MovieAI</label>
-          <div class="search-form__row">
-            <input id="site-search" type="search" placeholder="Search movies, login, profile..." required>
-            <button class="btn btn-primary" type="submit">Open search page</button>
-          </div>
-        </form>
-        <div class="quick-links">
-          <span>Jump to:</span>
-          <div class="quick-links__list">
-            <a href="movies.html">Movies</a>
-            <a href="login.html">Login</a>
-            <a href="create-user.html">Join</a>
-            <a href="user-profile.html">Profile</a>
-          </div>
-        </div>
       </div>
     </section>
 
