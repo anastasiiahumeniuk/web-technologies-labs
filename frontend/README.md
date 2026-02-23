@@ -8,7 +8,7 @@ This frontend is a static movie website built with:
 
 ## Project structure
 
-- `index.html`, `movies.html`, `movie-details.html`, `login.html`, `user-profile.html`
+- `index.html`, `movies.html`, `movie-details.html`, `login.html`, `create-user.html`, `user-profile.html`, `search.html`
 - `scss/main.scss` and partials in `scss/**`
 - Compiled file: `css/main.css`
 

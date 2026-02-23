@@ -14,8 +14,9 @@
         <ul class="nav-list">
           <li><a href="index.html" class="is-active">Home</a></li>
           <li><a href="movies.html">Movies</a></li>
+          <li><a href="search.html">Search</a></li>
           <li><a href="login.html">Login</a></li>
-          <li><a href="#signup-modal">Join</a></li>
+          <li><a href="create-user.html">Join</a></li>
         </ul>
       </nav>
     </div>
@@ -43,6 +44,32 @@
             <li>Quick access to details, schedule, and join form</li>
           </ul>
         </aside>
+      </div>
+    </section>
+
+    <section class="section section-search">
+      <div class="container search-panel">
+        <div class="search-panel__intro">
+          <p class="eyebrow">Navigate</p>
+          <h2>Find any corner of MovieAI</h2>
+          <p>Enter a quick search term to jump directly to the dedicated search page, or use the quick links below to hop between sections.</p>
+        </div>
+        <form class="search-form" action="search.html">
+          <label class="sr-only" for="site-search">Search MovieAI</label>
+          <div class="search-form__row">
+            <input id="site-search" type="search" placeholder="Search movies, login, profile..." required>
+            <button class="btn btn-primary" type="submit">Open search page</button>
+          </div>
+        </form>
+        <div class="quick-links">
+          <span>Jump to:</span>
+          <div class="quick-links__list">
+            <a href="movies.html">Movies</a>
+            <a href="login.html">Login</a>
+            <a href="create-user.html">Join</a>
+            <a href="user-profile.html">Profile</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -109,25 +136,6 @@
       </div>
     </section>
   </main>
-
-  <section id="signup-modal" class="modal" aria-label="Join form">
-    <div class="modal-content">
-      <a href="#" class="modal-close" aria-label="Close modal">&times;</a>
-      <h2>Join MovieAI</h2>
-      <form class="simple-form" action="#">
-        <label for="name">Name</label>
-        <input id="name" type="text" placeholder="Your name" required>
-        <label for="email">Email</label>
-        <input id="email" type="email" placeholder="you@example.com" required>
-        <label for="role">Role</label>
-        <select id="role">
-          <option>Student</option>
-          <option>Teacher</option>
-        </select>
-        <button class="btn btn-primary" type="submit">Submit</button>
-      </form>
-    </div>
-  </section>
 
   <footer class="site-footer">
     <div class="container footer-row">
