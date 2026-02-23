@@ -42,6 +42,13 @@
 .header-search__form {
   display: flex;
   gap: 0.65rem;
+  max-width: 920px;
+  margin: 0 auto;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  padding: 0.4rem 0.6rem;
+  border-radius: $radius;
+  background: rgba(12, 18, 31, 0.55);
 }
 
 .header-search__form input {
@@ -52,4 +59,11 @@
   padding: 0.65rem 1rem;
   background: rgba(255, 255, 255, 0.04);
   color: $text;
+}
+
+.header-search__form button {
+  padding: 0.65rem 1.5rem;
+  border-radius: $radius;
+  border: none;
+  font-weight: 600;
 }

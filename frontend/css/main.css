@@ -126,6 +126,13 @@ p {
 .header-search__form {
   display: flex;
   gap: 0.65rem;
+  max-width: 920px;
+  margin: 0 auto;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  padding: 0.4rem 0.6rem;
+  border-radius: 14px;
+  background: rgba(12, 18, 31, 0.55);
 }
 
 .header-search__form input {
@@ -136,6 +143,13 @@ p {
   padding: 0.65rem 1rem;
   background: rgba(255, 255, 255, 0.04);
   color: #e8edf7;
+}
+
+.header-search__form button {
+  padding: 0.65rem 1.5rem;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
 }
 
 .site-footer {
