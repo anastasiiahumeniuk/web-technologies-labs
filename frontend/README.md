@@ -1,6 +1,6 @@
-﻿# Frontend Lab 1 (Static HTML + SCSS)
+# Frontend (Static HTML + SCSS)
 
-This frontend is a static website for Lab 1:
+This frontend is a static movie website built with:
 - HTML for page structure
 - SCSS for styling
 - Compiled CSS output
