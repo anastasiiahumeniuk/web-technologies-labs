@@ -1,0 +1,23 @@
+@mixin container {
+  width: min(100% - 2rem, $container);
+  margin-inline: auto;
+}
+
+@mixin panel {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+@mixin flex-row($gap: 1rem) {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin responsive-grid($min: 240px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+  gap: 1rem;
+}
