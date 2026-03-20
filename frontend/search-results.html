@@ -22,24 +22,10 @@
 
   <main class="section">
     <div class="container">
-      <h1>Search Results: "retro sci-fi"</h1>
-      <p class="muted">2 results found</p>
-      <div class="cards">
-        <article class="card">
-          <img src="img/poster3.png" alt="Star-Voyagers poster">
-          <div class="card-body">
-            <h2>Star-Voyagers</h2>
-            <a class="btn btn-ghost" href="movie-details.html">Details</a>
-          </div>
-        </article>
-        <article class="card">
-          <img src="img/poster4.png" alt="The Colossal Creature poster">
-          <div class="card-body">
-            <h2>The Colossal Creature</h2>
-            <a class="btn btn-ghost" href="movie-details.html">Details</a>
-          </div>
-        </article>
-      </div>
+      <h1 data-search-title>Search Results</h1>
+      <p class="muted" data-search-summary>Preparing search...</p>
+      <p class="catalog-status" data-search-status>Loading search results...</p>
+      <div class="cards" data-search-grid></div>
     </div>
   </main>
 
@@ -48,5 +34,7 @@
       <p>&copy; 2026 MovieAI Lab.</p>
     </div>
   </footer>
+  <script src="js/api.js"></script>
+  <script src="js/search-results-page.js"></script>
 </body>
 </html>
