@@ -1,0 +1,11 @@
+.site-footer {
+  border-top: 1px solid $border;
+  margin-top: 3rem;
+}
+
+.footer-row {
+  @include flex-row(1rem);
+  justify-content: space-between;
+  padding: 1rem 0;
+  color: $muted;
+}

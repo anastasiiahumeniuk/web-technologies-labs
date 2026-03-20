@@ -1,0 +1,51 @@
+.hero {
+  padding: 2.2rem 0;
+}
+
+.hero-grid {
+  @include responsive-grid(280px);
+  align-items: start;
+}
+
+.actions {
+  @include flex-row(0.7rem);
+  margin-top: 1rem;
+}
+
+.section {
+  padding: 1.5rem 0;
+}
+
+.section-soft {
+  background: rgba(18, 27, 45, 0.5);
+  border-block: 1px solid $border;
+}
+
+.detail-grid {
+  @include responsive-grid(320px);
+}
+
+.detail-poster {
+  @include panel;
+  border-radius: $radius;
+}
+
+.two-col {
+  @include responsive-grid(300px);
+}
+
+.rating {
+  color: #fdba74;
+}
+
+@media (max-width: 680px) {
+  .nav-row {
+    flex-direction: column;
+    padding: 0.8rem 0;
+  }
+
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

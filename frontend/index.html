@@ -1,0 +1,126 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MovieAI | Static HTML + SCSS</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">MovieAI</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="is-active">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="create-user.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container header-search">
+      <form class="header-search__form" action="search-results.html">
+        <label class="sr-only" for="main-search">Search MovieAI</label>
+        <input id="main-search" name="q" type="search" placeholder="Search movie..." required>
+        <button class="btn btn-primary" type="submit">View results</button>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Movie Nights</p>
+          <h1>Discover your next favorite film</h1>
+          <p class="lead">
+            A stylish static movie website built with semantic HTML and SCSS.
+            Clean layout, strong visuals, and no JavaScript.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="movies.html">Explore collection</a>
+          </div>
+        </div>
+        <aside class="highlight-card">
+          <h2>Tonight on MovieAI</h2>
+          <ul>
+            <li>Curated movie picks for different moods</li>
+            <li>Atmospheric design with reusable SCSS components</li>
+            <li>Quick access to details, schedule, and join form</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Featured Titles</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="img/poster1.png" alt="Neo-Shadows poster">
+            <div class="card-body">
+              <h3>Neo-Shadows</h3>
+              <p>Cyberpunk action set in rain-soaked neon streets.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="img/poster2.png" alt="The Maltsee Shadow poster">
+            <div class="card-body">
+              <h3>The Maltsee Shadow</h3>
+              <p>Classic noir mystery in a dark city of secrets.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="img/poster3.png" alt="Star-Voyagers poster">
+            <div class="card-body">
+              <h3>Star-Voyagers</h3>
+              <p>Retro space adventure beyond the horizon.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <h2>Weekly Schedule</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Movie</th>
+                <th>Genre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday</td>
+                <td>Neo-Shadows</td>
+                <td>Cyberpunk Action</td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>Star-Voyagers</td>
+                <td>Sci-fi Adventure</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>The Colossal Creature</td>
+                <td>Monster</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>&copy; 2026 MovieAI.</p>
+    </div>
+  </footer>
+</body>
+</html>
