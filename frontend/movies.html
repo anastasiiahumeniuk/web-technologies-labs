@@ -23,40 +23,14 @@
   <main class="section">
     <div class="container">
       <h1>Movie Catalog</h1>
-      <div class="cards cards-4">
-        <article class="card">
-          <img src="img/poster1.png" alt="Neo-Shadows poster">
-          <div class="card-body">
-            <h2>Neo-Shadows</h2>
-            <p>Cyberpunk Action</p>
-            <a class="btn btn-ghost" href="movie-details.html">Details</a>
-          </div>
-        </article>
-        <article class="card">
-          <img src="img/poster2.png" alt="The Maltsee Shadow poster">
-          <div class="card-body">
-            <h2>The Maltsee Shadow</h2>
-            <p>Noir Mystery</p>
-            <a class="btn btn-ghost" href="movie-details.html">Details</a>
-          </div>
-        </article>
-        <article class="card">
-          <img src="img/poster3.png" alt="Star-Voyagers poster">
-          <div class="card-body">
-            <h2>Star-Voyagers</h2>
-            <p>Sci-fi Adventure</p>
-            <a class="btn btn-ghost" href="movie-details.html">Details</a>
-          </div>
-        </article>
-        <article class="card">
-          <img src="img/poster4.png" alt="The Colossal Creature poster">
-          <div class="card-body">
-            <h2>The Colossal Creature</h2>
-            <p>Monster</p>
-            <a class="btn btn-ghost" href="movie-details.html">Details</a>
-          </div>
-        </article>
-      </div>
+      <p class="muted">Catalog data is loaded from FastAPI with pure JavaScript `fetch`.</p>
+      <form class="catalog-toolbar" data-movies-search-form>
+        <label class="sr-only" for="movie-search">Search movies</label>
+        <input id="movie-search" data-movies-search-input type="search" placeholder="Search by title">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+      <p class="catalog-status" data-movies-status>Loading movies...</p>
+      <div class="cards cards-4" data-movies-list></div>
     </div>
   </main>
 
@@ -65,5 +39,7 @@
       <p>&copy; 2026 MovieAI Lab.</p>
     </div>
   </footer>
+  <script src="js/api.js"></script>
+  <script src="js/movies-page.js"></script>
 </body>
 </html>

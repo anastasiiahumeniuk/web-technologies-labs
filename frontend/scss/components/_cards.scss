@@ -19,3 +19,24 @@
 .card-body {
   padding: 0.9rem;
 }
+
+.catalog-status {
+  @include panel;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+  color: $muted;
+}
+
+.catalog-status.is-success {
+  border-color: #35548f;
+}
+
+.catalog-status.is-warning {
+  border-color: #8a6a1f;
+  color: #fcd34d;
+}
+
+.catalog-status.is-error {
+  border-color: #9f1239;
+  color: #fda4af;
+}

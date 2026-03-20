@@ -1,0 +1,12 @@
+{
+  "name": "web-technologies-labs",
+  "private": true,
+  "scripts": {
+    "lint": "eslint \"frontend/js/**/*.js\""
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "eslint": "^9.23.0",
+    "globals": "^16.0.0"
+  }
+}
