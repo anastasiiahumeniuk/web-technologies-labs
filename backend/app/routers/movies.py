@@ -1,15 +1,19 @@
-from fastapi import APIRouter, Query, Depends, HTTPException
-from sqlalchemy.orm import Session
-from sqlalchemy import select, asc, desc
-from typing import List, Optional
+import os
 import logging
 from datetime import datetime
+from typing import List, Optional
+
+from fastapi import APIRouter, Query, Depends, HTTPException
+from fastapi.responses import StreamingResponse
+from sqlalchemy.orm import Session
+from sqlalchemy import select, asc, desc
 from app.database.sessions import get_db
 from app.models.age_certification import AgeCertification
 from app.models.film import Film
 from app.models.film_genre import FilmGenre
 from app.models.genre import Genre
 from app.schemas.movies import MovieResponse, MovieDetailResponse, MovieHomeRead
+from app.services.cloud_service import get_s3_client
 from app.services.film_service import get_unpopular_movies, get_top_movies_current_year
 
 logger = logging.getLogger(__name__)
@@ -18,6 +22,25 @@ router = APIRouter(
     prefix="/movies",
     tags=["Movies"]
 )
+
+
+@router.get("/posters/{poster_key:path}")
+def get_movie_poster(poster_key: str):
+    logger.info("Request for poster: %s", poster_key)
+
+    s3_client = get_s3_client()
+    bucket_name = os.getenv("R2_BUCKET_NAME")
+
+    if s3_client is None or not bucket_name:
+        raise HTTPException(status_code=503, detail="Poster storage is unavailable")
+
+    try:
+        response = s3_client.get_object(Bucket=bucket_name, Key=poster_key)
+        content_type = response.get("ContentType", "image/jpeg")
+        return StreamingResponse(response["Body"], media_type=content_type)
+    except Exception as exc:
+        logger.error("Failed to load poster %s: %s", poster_key, exc)
+        raise HTTPException(status_code=404, detail="Poster not found")
 
 
 @router.get("", response_model=List[MovieResponse])

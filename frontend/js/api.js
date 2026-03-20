@@ -1,5 +1,6 @@
 const API_BASE_URL = "http://127.0.0.1:8000";
 const FALLBACK_POSTER = "img/poster1.png";
+const TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 async function fetchJson(path, options = {}) {
   const response = await fetch(`${API_BASE_URL}${path}`, options);
@@ -20,7 +21,11 @@ function buildPosterUrl(posterPath) {
     return posterPath;
   }
 
-  return posterPath;
+  if (posterPath.startsWith("/")) {
+    return `${TMDB_IMAGE_BASE_URL}${posterPath}`;
+  }
+
+  return `${API_BASE_URL}/movies/posters/${posterPath}`;
 }
 
 window.fetchJson = fetchJson;
