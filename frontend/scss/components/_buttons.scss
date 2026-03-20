@@ -24,3 +24,50 @@
 .btn-ghost:hover {
   border-color: #46629a;
 }
+
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.btn-ghost:disabled,
+.btn-ghost[disabled] {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: $border;
+  color: $muted;
+}
+
+.catalog-more {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.catalog-more__link {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: $text;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  position: relative;
+}
+
+.catalog-more__link::after {
+  content: " ->";
+  color: $primary;
+}
+
+.catalog-more__link:hover {
+  color: #fff;
+}
+
+.catalog-more__link:disabled,
+.catalog-more__link[disabled] {
+  color: $muted;
+  cursor: wait;
+}
