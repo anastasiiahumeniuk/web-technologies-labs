@@ -397,6 +397,15 @@ tbody tr + tr {
   color: #fdba74;
 }
 
+.detail-panel {
+  margin: 1rem 0;
+}
+
+.detail-people {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
 @media (max-width: 680px) {
   .nav-row {
     flex-direction: column;
