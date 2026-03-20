@@ -13,11 +13,11 @@ function renderSearchResults(movies) {
     .map(
       (movie) => `
         <article class="card">
-          <img src="${window.buildPosterUrl(movie.poster_path)}" alt="${movie.title} poster">
+          <img src="${window.buildPosterUrl(movie.poster_path)}" alt="Постер: ${movie.title}">
           <div class="card-body">
             <h2>${movie.title}</h2>
-            <p class="muted">${movie.year ?? "Year unknown"} • IMDb ${movie.imdb_rating ?? "N/A"}</p>
-            <a class="btn btn-ghost" href="movie-details.html?id=${movie.id}">Details</a>
+            <p class="muted">${movie.year ?? "Рік невідомий"} | IMDb ${movie.imdb_rating ?? "Н/Д"}</p>
+            <a class="btn btn-ghost" href="movie-details.html?id=${movie.id}">Деталі</a>
           </div>
         </article>
       `
@@ -30,32 +30,32 @@ async function loadSearchResults() {
   const query = params.get("q")?.trim() ?? "";
 
   if (!query) {
-    searchTitle.textContent = "Search Results";
-    searchSummary.textContent = "No search query was provided.";
-    showSearchStatus("Enter a query on the home page search form.", "is-warning");
+    searchTitle.textContent = "Результати пошуку";
+    searchSummary.textContent = "Пошуковий запит не передано.";
+    showSearchStatus("Введіть запит у формі пошуку на головній сторінці.", "is-warning");
     return;
   }
 
-  searchTitle.textContent = `Search Results: "${query}"`;
-  searchSummary.textContent = "Searching movies...";
-  showSearchStatus("Loading search results...");
+  searchTitle.textContent = `Результати пошуку: "${query}"`;
+  searchSummary.textContent = "Пошук фільмів...";
+  showSearchStatus("Завантаження результатів пошуку...");
 
   try {
     const movies = await window.fetchJson(`/movies/search?q=${encodeURIComponent(query)}&limit=12`);
 
     if (movies.length === 0) {
-      searchSummary.textContent = "0 results found";
-      showSearchStatus("No movies matched your query.", "is-warning");
+      searchSummary.textContent = "Збігів не знайдено";
+      showSearchStatus("За вашим запитом фільмів не знайдено.", "is-warning");
       return;
     }
 
     renderSearchResults(movies);
-    searchSummary.textContent = `${movies.length} result(s) found`;
-    showSearchStatus("Search completed.", "is-success");
+    searchSummary.textContent = `Знайдено результатів: ${movies.length}`;
+    showSearchStatus("Пошук завершено успішно.", "is-success");
   } catch (error) {
     console.error(error);
-    searchSummary.textContent = "Search failed";
-    showSearchStatus("Failed to load search results. Check that the backend is running.", "is-error");
+    searchSummary.textContent = "Помилка пошуку";
+    showSearchStatus("Не вдалося завантажити результати пошуку. Перевір роботу бекенду.", "is-error");
   }
 }
 

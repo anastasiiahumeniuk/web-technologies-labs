@@ -13,13 +13,13 @@ function showDetailStatus(message, variant = "") {
 }
 
 function formatMovieMeta(movie) {
-  const genres = movie.genres.length > 0 ? movie.genres.join(", ") : "Genres not specified";
-  return `${movie.year ?? "Year unknown"} • ${genres}`;
+  const genres = movie.genres.length > 0 ? movie.genres.join(", ") : "Жанри не вказані";
+  return `${movie.year ?? "Рік невідомий"} | ${genres}`;
 }
 
 function renderPeople(people) {
   if (people.length === 0) {
-    return '<li class="muted">People data is not available.</li>';
+    return '<li class="muted">Інформація про акторів відсутня.</li>';
   }
 
   return people.map((person) => `<li>${person}</li>`).join("");
@@ -28,10 +28,10 @@ function renderPeople(people) {
 function renderMovieDetails(movie) {
   detailTitle.textContent = movie.title;
   detailMeta.textContent = formatMovieMeta(movie);
-  detailOverview.textContent = movie.overview || "Overview is not available.";
-  detailRating.innerHTML = `IMDb rating: <strong>${movie.imdb_rating ?? "N/A"}</strong>`;
+  detailOverview.textContent = movie.overview || "Опис фільму відсутній.";
+  detailRating.innerHTML = `Рейтинг IMDb: <strong>${movie.imdb_rating ?? "Н/Д"}</strong>`;
   detailPoster.src = window.buildPosterUrl(movie.poster_path);
-  detailPoster.alt = `${movie.title} poster`;
+  detailPoster.alt = `Постер: ${movie.title}`;
   detailPeople.innerHTML = renderPeople(movie.people);
   detailContent.hidden = false;
 }
@@ -41,19 +41,19 @@ async function loadMovieDetails() {
   const movieId = params.get("id");
 
   if (!movieId) {
-    showDetailStatus("Movie id was not provided in the URL.", "is-warning");
+    showDetailStatus("У URL не передано ідентифікатор фільму.", "is-warning");
     return;
   }
 
-  showDetailStatus("Loading movie details...");
+  showDetailStatus("Завантаження деталей фільму...");
 
   try {
     const movie = await window.fetchJson(`/movies/${encodeURIComponent(movieId)}`);
     renderMovieDetails(movie);
-    showDetailStatus("Movie details loaded.", "is-success");
+    showDetailStatus("Дані про фільм успішно завантажено.", "is-success");
   } catch (error) {
     console.error(error);
-    showDetailStatus("Failed to load movie details. Check the id and backend server.", "is-error");
+    showDetailStatus("Не вдалося завантажити деталі фільму. Перевір `id` і роботу бекенду.", "is-error");
   }
 }
 

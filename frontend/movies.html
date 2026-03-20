@@ -1,20 +1,20 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Movies | MovieAI Lab</title>
+  <title>Каталог фільмів | MovieAI Lab</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container nav-row">
       <a class="brand" href="index.html">MovieAI Lab</a>
-      <nav aria-label="Main navigation">
+      <nav aria-label="Основна навігація">
         <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="movies.html" class="is-active">Movies</a></li>
-          <li><a href="login.html">Login</a></li>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="movies.html" class="is-active">Фільми</a></li>
+          <li><a href="login.html">Вхід</a></li>
         </ul>
       </nav>
     </div>
@@ -22,14 +22,14 @@
 
   <main class="section">
     <div class="container">
-      <h1>Movie Catalog</h1>
-      <p class="muted">Catalog data is loaded from FastAPI with pure JavaScript `fetch`.</p>
+      <h1>Каталог фільмів</h1>
+      <p class="muted">Список фільмів завантажується з FastAPI через чистий JavaScript `fetch`.</p>
       <form class="catalog-toolbar" data-movies-search-form>
-        <label class="sr-only" for="movie-search">Search movies</label>
-        <input id="movie-search" data-movies-search-input type="search" placeholder="Search by title">
-        <button class="btn btn-primary" type="submit">Search</button>
+        <label class="sr-only" for="movie-search">Пошук фільмів</label>
+        <input id="movie-search" data-movies-search-input type="search" placeholder="Пошук за назвою">
+        <button class="btn btn-primary" type="submit">Шукати</button>
       </form>
-      <p class="catalog-status" data-movies-status>Loading movies...</p>
+      <p class="catalog-status" data-movies-status>Завантаження фільмів...</p>
       <div class="cards cards-4" data-movies-list></div>
     </div>
   </main>

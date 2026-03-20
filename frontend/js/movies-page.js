@@ -8,11 +8,11 @@ function renderMovies(movies) {
     .map(
       (movie) => `
         <article class="card">
-          <img src="${window.buildPosterUrl(movie.poster_path)}" alt="${movie.title} poster">
+          <img src="${window.buildPosterUrl(movie.poster_path)}" alt="Постер: ${movie.title}">
           <div class="card-body">
             <h2>${movie.title}</h2>
-            <p class="muted">${movie.year ?? "Year unknown"} • IMDb ${movie.imdb_rating ?? "N/A"}</p>
-            <a class="btn btn-ghost" href="movie-details.html?id=${movie.id}">Details</a>
+            <p class="muted">${movie.year ?? "Рік невідомий"} | IMDb ${movie.imdb_rating ?? "Н/Д"}</p>
+            <a class="btn btn-ghost" href="movie-details.html?id=${movie.id}">Деталі</a>
           </div>
         </article>
       `
@@ -26,7 +26,7 @@ function showStatus(message, variant = "") {
 }
 
 async function loadMovies(query = "") {
-  showStatus("Loading movies...");
+  showStatus("Завантаження фільмів...");
   moviesGrid.innerHTML = "";
 
   try {
@@ -36,15 +36,15 @@ async function loadMovies(query = "") {
     const movies = await window.fetchJson(endpoint);
 
     if (movies.length === 0) {
-      showStatus("No movies found for this request.", "is-warning");
+      showStatus("За цим запитом нічого не знайдено.", "is-warning");
       return;
     }
 
     renderMovies(movies);
-    showStatus(`Loaded ${movies.length} movie(s).`, "is-success");
+    showStatus(`Завантажено фільмів: ${movies.length}.`, "is-success");
   } catch (error) {
     console.error(error);
-    showStatus("Failed to load movies. Check that the backend is running on http://127.0.0.1:8000.", "is-error");
+    showStatus("Не вдалося завантажити фільми. Перевір, чи бекенд працює на http://127.0.0.1:8000.", "is-error");
   }
 }
 

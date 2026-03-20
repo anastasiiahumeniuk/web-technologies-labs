@@ -1,29 +1,29 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MovieAI | Static HTML + SCSS</title>
+  <title>MovieAI Lab | Головна</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container nav-row">
-      <a class="brand" href="index.html">MovieAI</a>
-      <nav aria-label="Main navigation">
+      <a class="brand" href="index.html">MovieAI Lab</a>
+      <nav aria-label="Основна навігація">
         <ul class="nav-list">
-          <li><a href="index.html" class="is-active">Home</a></li>
-          <li><a href="movies.html">Movies</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="create-user.html">Join</a></li>
+          <li><a href="index.html" class="is-active">Головна</a></li>
+          <li><a href="movies.html">Фільми</a></li>
+          <li><a href="search-results.html?q=%D0%B4%D1%80%D0%B0%D0%BC%D0%B0">Пошук</a></li>
+          <li><a href="login.html">Вхід</a></li>
         </ul>
       </nav>
     </div>
     <div class="container header-search">
       <form class="header-search__form" action="search-results.html">
-        <label class="sr-only" for="main-search">Search MovieAI</label>
-        <input id="main-search" name="q" type="search" placeholder="Search movie..." required>
-        <button class="btn btn-primary" type="submit">View results</button>
+        <label class="sr-only" for="main-search">Пошук фільму</label>
+        <input id="main-search" name="q" type="search" placeholder="Введіть назву фільму..." required>
+        <button class="btn btn-primary" type="submit">Знайти</button>
       </form>
     </div>
   </header>
@@ -32,83 +32,78 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Movie Nights</p>
-          <h1>Discover your next favorite film</h1>
+          <p class="eyebrow">Лабораторна робота №2</p>
+          <h1>Пошук і перегляд фільмів через AJAX</h1>
           <p class="lead">
-            A stylish static movie website built with semantic HTML and SCSS.
-            Clean layout, strong visuals, and no JavaScript.
+            Це фронтенд для лабораторної з client-server взаємодії.
+            Сторінки отримують дані з FastAPI за допомогою чистого JavaScript `fetch`
+            без `jQuery`.
           </p>
           <div class="actions">
-            <a class="btn btn-primary" href="movies.html">Explore collection</a>
+            <a class="btn btn-primary" href="movies.html">Відкрити каталог</a>
+            <a class="btn btn-ghost" href="search-results.html?q=%D0%BA%D0%BE%D0%BC%D0%B5%D0%B4%D1%96%D1%8F">Спробувати пошук</a>
           </div>
         </div>
         <aside class="highlight-card">
-          <h2>Tonight on MovieAI</h2>
+          <h2>Що вже реалізовано</h2>
           <ul>
-            <li>Curated movie picks for different moods</li>
-            <li>Atmospheric design with reusable SCSS components</li>
-            <li>Quick access to details, schedule, and join form</li>
+            <li>Каталог фільмів із завантаженням із бекенду</li>
+            <li>Пошук за назвою через AJAX-запити</li>
+            <li>Сторінка деталей фільму з параметром `id`</li>
+            <li>Перевірка JavaScript-коду через `npm run lint`</li>
           </ul>
         </aside>
       </div>
     </section>
 
     <section class="section">
-      <div class="container">
-        <h2>Featured Titles</h2>
-        <div class="cards">
-          <article class="card">
-            <img src="img/poster1.png" alt="Neo-Shadows poster">
-            <div class="card-body">
-              <h3>Neo-Shadows</h3>
-              <p>Cyberpunk action set in rain-soaked neon streets.</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="img/poster2.png" alt="The Maltsee Shadow poster">
-            <div class="card-body">
-              <h3>The Maltsee Shadow</h3>
-              <p>Classic noir mystery in a dark city of secrets.</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="img/poster3.png" alt="Star-Voyagers poster">
-            <div class="card-body">
-              <h3>Star-Voyagers</h3>
-              <p>Retro space adventure beyond the horizon.</p>
-            </div>
-          </article>
-        </div>
+      <div class="container two-col">
+        <article class="panel">
+          <h2>Основні сторінки</h2>
+          <p class="muted">Перейдіть до потрібного розділу для перевірки функціоналу.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="movies.html">Каталог</a>
+            <a class="btn btn-ghost" href="movie-details.html?id=2483">Деталі фільму</a>
+            <a class="btn btn-ghost" href="user-profile.html">Профіль</a>
+          </div>
+        </article>
+        <article class="panel">
+          <h2>Технології</h2>
+          <p><strong>Frontend:</strong> HTML, SCSS, JavaScript</p>
+          <p><strong>Backend:</strong> FastAPI</p>
+          <p><strong>Запити:</strong> `fetch`, JSON, GET</p>
+          <p><strong>Лінтер:</strong> ESLint</p>
+        </article>
       </div>
     </section>
 
     <section class="section section-soft">
       <div class="container">
-        <h2>Weekly Schedule</h2>
+        <h2>Що можна перевірити</h2>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Day</th>
-                <th>Movie</th>
-                <th>Genre</th>
+                <th>Крок</th>
+                <th>Сторінка</th>
+                <th>Результат</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Monday</td>
-                <td>Neo-Shadows</td>
-                <td>Cyberpunk Action</td>
+                <td>1</td>
+                <td>`movies.html`</td>
+                <td>Завантаження каталогу з API</td>
               </tr>
               <tr>
-                <td>Wednesday</td>
-                <td>Star-Voyagers</td>
-                <td>Sci-fi Adventure</td>
+                <td>2</td>
+                <td>`search-results.html?q=...`</td>
+                <td>Пошук фільмів за назвою</td>
               </tr>
               <tr>
-                <td>Friday</td>
-                <td>The Colossal Creature</td>
-                <td>Monster</td>
+                <td>3</td>
+                <td>`movie-details.html?id=...`</td>
+                <td>Перегляд повної інформації про фільм</td>
               </tr>
             </tbody>
           </table>
@@ -119,7 +114,7 @@
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <p>&copy; 2026 MovieAI.</p>
+      <p>&copy; 2026 MovieAI Lab.</p>
     </div>
   </footer>
 </body>
