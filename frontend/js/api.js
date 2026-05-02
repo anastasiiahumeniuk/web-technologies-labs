@@ -28,5 +28,6 @@ function buildPosterUrl(posterPath) {
   return `${API_BASE_URL}/movies/posters/${posterPath}`;
 }
 
+window.API_BASE_URL = API_BASE_URL;
 window.fetchJson = fetchJson;
 window.buildPosterUrl = buildPosterUrl;

@@ -4,10 +4,8 @@ const formElement = document.getElementById("chat-form");
 const inputElement = document.getElementById("chat-input");
 const sendButton = document.getElementById("chat-send");
 
-const wsUrl = new URL("/ws/chat", window.location.href);
-wsUrl.protocol = wsUrl.protocol === "https:" ? "wss:" : "ws:";
-
-const socket = new WebSocket(wsUrl.toString());
+const wsBase = window.API_BASE_URL.replace(/^http:/, "ws:").replace(/^https:/, "wss:");
+const socket = new WebSocket(`${wsBase}/ws/chat`);
 
 function setStatus(text, variant = "") {
   statusElement.textContent = text;
