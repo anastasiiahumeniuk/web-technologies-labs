@@ -2,11 +2,9 @@ import logging
 import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware 
-from app.routers import search, movies, frontend_logs, auth, query, history, interactions
-from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
-from app.routers import search, movies, frontend_logs, auth, query, history
+from app.routers import search, movies, frontend_logs, auth, query, history, interactions, chat
 from app.core.logging import setup_logging
 from app.services.db_warmup import warmup_db
 from app.services.embedding import generate_embedding
@@ -53,6 +51,7 @@ app.include_router(frontend_logs.router)
 app.include_router(query.router)
 app.include_router(history.router)
 app.include_router(interactions.router)
+app.include_router(chat.router)
 app.include_router(profile_router)
 
 Instrumentator().instrument(app).expose(app)
